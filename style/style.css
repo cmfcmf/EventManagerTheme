@@ -83,3 +83,10 @@ html.unsupported-browser .unsupported-browser-message {
 #theme-footer-bottom-row .z-pagerendertime {
     display: inherit;
 }
+
+.z-form .z-formrow input[type=checkbox], .z-form .z-formrow input[type=checkbox]:hover, .z-form .z-formrow input[type=checkbox]:focus {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: block;
+}
