@@ -76,12 +76,9 @@
         Sie benutzen einen veralteten Browser. Die Seite wird unter Umständen nicht richtig funktionieren.
     </div>
     <div class="row">
-        {blockposition name='center' assign='center'}
-        {if !empty($center)}
-            <div class="col-xs-12 hidden-print">
-                {$center}
-            </div>
-        {/if}
+        <div class="col-xs-12 hidden-print">
+            {blockposition name='center'}
+        </div>
         <div class="col-xs-12">
             {$maincontent}
         </div>
@@ -94,10 +91,16 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-3">
-                {blockposition name='footerright'}
+                {blockposition name='footerleft'}
             </div>
             <div class="col-xs-12 col-sm-3">
-                {blockposition name='footermiddle'}
+                {blockposition name='footermiddleleft'}
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                {blockposition name='footermiddleright'}
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                {blockposition name='footerright'}
             </div>
         </div>
     </div>

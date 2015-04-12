@@ -39,7 +39,7 @@
             <span class="username"><a href="{modurl modname='EventManager' type='user' func='dashboard'}">{$firstname} {$lastname}</a></span>
         </div>
     {/if}
-    {blockposition name='topcenter'}
+    {blockposition name='sidenav'}
 </nav>
 {assign var='padding' value=64}
 <nav class="appbar-container">
