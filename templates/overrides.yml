@@ -1,1 +1,2 @@
 system/Theme/templates/system/siteoff.tpl: themes/EventManager/templates/modules/Theme/siteoff.tpl
+modules/Newsletter/templates/block/signup.tpl: themes/EventManager/templates/modules/Newsletter/block/signup.tpl

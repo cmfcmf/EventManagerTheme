@@ -84,6 +84,25 @@ html.unsupported-browser .unsupported-browser-message {
     display: inherit;
 }
 
+#theme-footer ::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+}
+#theme-footer :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    opacity:  1;
+}
+#theme-footer ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    white;
+    opacity:  1;
+}
+#theme-footer :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    white;
+}
+#theme-footer input[type=text] {
+    color: white;
+    box-shadow: white 0 -1px 0 0 inset;
+}
+
 .z-form .z-formrow input[type=checkbox], .z-form .z-formrow input[type=checkbox]:hover, .z-form .z-formrow input[type=checkbox]:focus {
     margin: 0;
     padding: 0;
