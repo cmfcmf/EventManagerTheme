@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App Bar Example</title>
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="appbar.css" />
+    <link rel="stylesheet" href="sidenav.css" />
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <script src="appbar.js"></script>
+    <!-- Only needed if tabs are used -->
+    <script src="appbar-tabs.js"></script>
+    <script src="sidenav.js"></script>
+</head>
+<body>
+<nav class="sidenav" id="left-sidenav">
+    <!-- Either include this header... -->
+    <div class="header">
+        <img src="sidenav-header.png" height="135" width="240" />
+        <img class="img img-circle avatar" src="https://www.gravatar.com/avatar/test?default=mm&s=60" />
+        <span class="username">Christian Flach</span>
+    </div>
+    <ul>
+        <!-- ...or this logo -->
+        <!-- li class="logo">
+            <i class="fa fa-github fa-5x"></i>
+        </li -->
+        <li>
+            <a href="#">Events</a>
+        </li>
+        <li>
+            <a href="#">Archiv</a>
+        </li>
+        <li>
+            <a href="#">Feedbacks</a>
+        </li>
+    </ul>
+</nav>
+<nav class="appbar-container">
+    <div class="appbar inverse" id="js-defaultbar">
+        <ul class="actions">
+            <li>
+                <a href="#" class="icon-link js-main-action" data-toggle="tooltip" data-placement="bottom" title="Menu" data-sidenav="left-sidenav">
+                    <i class="fa fa-bars nav-icon"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- You may use a dropdown... -->
+        <div class="title">
+            <div class="dropdown">
+                <a href="#" data-toggle="dropdown">
+                    Action
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- ...or a simple title -->
+        <span class="title">Events</span>
+        <ul class="actions right">
+            <li>
+                <a href="#" class="icon-link" data-toggle="tooltip" data-placement="bottom" title="Search" data-show-appbar="js-searchbar">
+                    <i class="fa fa-search"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="icon-link">
+                    <i class="fa fa-heart"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="icon-link" data-toggle="tooltip" data-placement="bottom" title="More">
+                    <i class="fa fa-ellipsis-v"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Optionally include the extended appbar. -->
+    <!-- div class="appbar-extended inverse">
+        <span class="title">70. Jahrestag der Befreiung von Auschwitz : "Vergiss Deinen Namen nicht – Die Kinder von Auschwitz"</span>
+    </div -->
+
+    <!-- Optionally include tabs -->
+    <div class="appbar-tabs inverse">
+        <i class="fa fa-arrow-left js-scroll-left"></i>
+        <ul>
+            <li class="active"><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 3</a></li>
+        </ul>
+        <i class="fa fa-arrow-right js-scroll-right"></i>
+    </div>
+</nav>
+<nav class="appbar-container">
+    <div class="appbar hidden" id="js-searchbar">
+        <ul class="actions">
+            <li>
+                <a href="#" class="icon-link js-main-action" data-toggle="tooltip" data-placement="bottom" title="Back" data-hide-appbar="js-defaultbar">
+                    <i class="fa fa-arrow-left nav-icon"></i>
+                </a>
+            </li>
+        </ul>
+        <span class="title">
+            <form action="" method="get">
+                <input name="q" class="search" type="search" placeholder="Search" />
+                <button type="submit" class="btn btn-xs btn-primary">Search</button>
+            </form>
+        </span>
+    </div>
+</nav>
+</body>
+</html>

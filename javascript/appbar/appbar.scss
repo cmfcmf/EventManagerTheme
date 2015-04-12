@@ -1,0 +1,264 @@
+$nav_color: #fff;
+$nav_color_inverse: #fb0;
+$link_hover_color: null;
+$link_hover_color_inverse: null;
+
+@if lightness($nav_color) > 50 {
+  $link_hover_color: darken($nav_color, 10);
+} @else {
+  $link_hover_color: lighten($nav_color, 10);
+}
+@if lightness($nav_color_inverse) > 50 {
+  $link_hover_color_inverse: darken($nav_color_inverse, 10);
+} @else {
+  $link_hover_color_inverse: lighten($nav_color_inverse, 10);
+}
+
+$icon_color: #737373;
+$title_color: #212121;
+
+$icon_height: 24px;
+$min_touch_size: 48px;
+
+$icon_inverse_color: white;
+$title_inverse_color: $icon_inverse_color;
+
+$mobile_nav_padding: 16px;
+$mobile_title_padding_bottom: 20px;
+
+$mobile_nav_height_portrait: 56px;
+$mobile_nav_height_landscape: 48px;
+$mobile_nav_extended_height: 72px;
+
+$mobile_title_padding_left: 72px;
+
+$tablet_nav_height: 64px;
+$tablet_nav_extended_height: 64px;
+$tablet_nav_padding_left_right: 24px;
+$tablet_nav_padding_top: 20px;
+$tablet_title_padding_left: 80px;
+$tablet_title_padding_bottom: 24px;
+
+$tabs_height: 48px;
+$mobile_tabs_padding_leftright: 12px;
+$tablet_tabs_padding_leftright: 24px;
+
+.appbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 5px 6px -3px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.appbar, .appbar-extended, .appbar-tabs {
+  position: relative;
+  background-color: $nav_color;
+
+  a:not([role=menuitem]) {
+    color: $title_color;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .title {
+    position: absolute;
+    color: $title_color;
+    font-size: 20px;
+    line-height: 20px;
+
+    .search {
+      border: none;
+      border-bottom: 1px solid $nav_color_inverse;
+    }
+
+
+    @media (max-width: 767px) {
+      left: $mobile_title_padding_left;
+      bottom: $mobile_title_padding_bottom;
+
+      @media (orientation: landscape) {
+        bottom: $mobile_title_padding_bottom - ($mobile_nav_height_portrait - $mobile_nav_height_landscape) / 2;
+      }
+    }
+    @media (min-width: 768px) {
+      left: $tablet_title_padding_left;
+      bottom: $tablet_title_padding_bottom;
+    }
+  }
+  .icon-link {
+    padding: ($min_touch_size - $icon_height) / 2;
+    display: inline-block;
+    border-radius: 3px;
+    .fa {
+      height: $icon_height;
+      font-size: $icon_height;
+      line-height: $icon_height;
+    }
+    &:hover, &:focus {
+      background: $link_hover_color;
+    }
+  }
+}
+
+.appbar {
+  @media (max-width: 767px) {
+    padding-left: $mobile_nav_padding;
+    padding-right: $mobile_nav_padding;
+    padding-top: $mobile_nav_padding;
+    height: $mobile_nav_height_portrait;
+
+    @media (orientation: landscape) {
+      height: $mobile_nav_height_landscape;
+      padding-top: $mobile_nav_padding - ($mobile_nav_height_portrait - $mobile_nav_height_landscape) / 2;
+    }
+  }
+  @media (min-width: 768px) {
+    padding-left: $tablet_nav_padding_left_right;
+    padding-right: $tablet_nav_padding_left_right;
+    padding-top: $tablet_nav_padding_top;
+    height: $tablet_nav_height;
+  }
+
+  .fa {
+    color: $icon_color;
+  }
+
+  ul.actions {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    @media (max-width: 767px) {
+      margin-top: -$mobile_nav_padding + ($mobile_nav_height_portrait - $min_touch_size) / 2;
+      margin-right: -$mobile_nav_padding;
+      margin-left: - ($mobile_nav_padding - (($min_touch_size - $icon_height) / 2));
+    }
+    @media (min-width: 768px) {
+      margin-top: -$tablet_nav_padding_top + ($tablet_nav_height - $min_touch_size) / 2;
+      margin-right: -$tablet_nav_padding_left_right;
+      margin-left: - ($tablet_nav_padding_left_right - (($min_touch_size - $icon_height) / 2));
+    }
+
+    &.right {
+      float: right;
+      margin-top: 0;
+      @-moz-document url-prefix() {
+        margin-top: -12px;
+      }
+
+      @media (max-width: 767px) {
+        margin-right: - ($mobile_nav_padding - (($min_touch_size - $icon_height) / 2));
+      }
+      @media (min-width: 768px) {
+        margin-right: - ($tablet_nav_padding_left_right - (($min_touch_size - $icon_height) / 2));
+      }
+    }
+
+    li {
+      float: left;
+    }
+  }
+}
+
+.appbar-extended {
+  @media (max-width: 767px) {
+    height: $mobile_nav_extended_height;
+  }
+  @media (min-width: 768px) {
+    height: $tablet_nav_extended_height;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.appbar-tabs {
+  padding: 0;
+  margin: 0;
+  height: $tabs_height;
+  position: relative;
+
+  & > i {
+    position: absolute;
+    font-size: 14px;
+    line-height: 14px;
+    bottom: 0;
+    left: 0;
+    padding: (48px - 14px - 20px) 20px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+
+    &:last-of-type {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  & > ul {
+    height: 100%;
+    padding: 0;
+    @media (max-width: 767px) {
+      margin: 0 0 0 ($mobile_title_padding_left - $mobile_tabs_padding_leftright);
+    }
+    @media (min-width: 768px) {
+      margin: 0 0 0 ($tablet_title_padding_left - $tablet_tabs_padding_leftright);
+    }
+
+    list-style: none;
+
+    display: block;
+    white-space: nowrap;
+    //overflow-x: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    li {
+      height: 100%;
+      padding-top: 16px;
+      margin: 0;
+      @media (max-width: 767px) {
+        padding-left: $mobile_tabs_padding_leftright;
+        padding-right: $mobile_tabs_padding_leftright;
+      }
+      @media (min-width: 768px) {
+        padding-left: $tablet_tabs_padding_leftright;
+        padding-right: $tablet_tabs_padding_leftright;
+      }
+
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 14px;
+      line-height: 14px;
+
+      display: inline-block;
+
+      &.active {
+        border-bottom: 2px solid $nav_color_inverse;
+        height: $tabs_height - 2px;
+      }
+    }
+  }
+}
+
+.appbar.inverse, .appbar-extended.inverse, .appbar-tabs.inverse {
+  background-color: $nav_color_inverse;
+  a:not([role=menuitem]), .title {
+    color: $title_inverse_color;
+  }
+  .fa {
+    color: $icon_inverse_color;
+  }
+  .icon-link:hover, .icon-link:focus {
+    background-color: $link_hover_color_inverse;
+  }
+}
+
+.appbar-tabs.inverse > ul li.active {
+  border-color: $nav_color;
+}
