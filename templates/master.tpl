@@ -67,9 +67,6 @@
 </head>
 <body>
 {include file='header-nav.tpl'}
-{if isset($smarty.get.r)}
-    <iframe width="1" height="1" src="https://www.youtube-nocookie.com/embed/_xE5QHq4yrY?rel=0&amp;controls=0&amp;showinfo=0&amp;start=10&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
-{/if}
 <div class="container">
     <div class="alert alert-danger unsupported-browser-message hidden">
         <br />
