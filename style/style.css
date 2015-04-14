@@ -10,6 +10,12 @@ html.unsupported-browser .unsupported-browser-message {
 .feedback-btn {
     right: 120px;
 }
+.feedback-logo {
+    width: inherit !important;
+}
+.feedback-buttons {
+    margin-top: 0 !important;
+}
 
 
 .nav-header {
