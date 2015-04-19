@@ -53,7 +53,7 @@
         </ul>
         <div class="title">
             <div class="dropdown">
-                <a href="#" data-toggle="dropdown">
+                <a href="#" data-toggle="dropdown"{if empty($smallTitleActions)} data-sidenav="left-sidenav"{/if}>
                     {$smallTitle}
                     {if !empty($smallTitleActions)}
                         <span class="caret"></span>
