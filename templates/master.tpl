@@ -20,6 +20,8 @@
     {pageaddvar name="stylesheet" value="$stylepath/bootstrap/bootstrap.min.css"}
     {pageaddvar name="stylesheet" value="$stylepath/fontawesome/css/font-awesome.min.css"}
 
+    {pageaddvar name="stylesheet" value="$stylepath/flat-btns.css"}
+
     {pageaddvar name="javascript" value="jquery"}
     {pageaddvar name="javascript" value="$scriptpath/bootstrap.min.js"}
 
