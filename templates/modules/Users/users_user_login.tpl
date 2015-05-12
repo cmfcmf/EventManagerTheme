@@ -13,30 +13,12 @@
 {modulelinks modname='Users' type='user'}
 {include file='users_user_menu.tpl'}
 <div class="alert alert-warning">
-    <i class="fa fa-fw fa-5x fa-exclamation-triangle pull-left"></i>
+    <i class="fa fa-fw fa-3x fa-exclamation-triangle pull-left"></i>
     Bitte beachten Sie, dass Sie zur Anmeldung bei einer Veranstaltung <strong>kein Benutzerkonto benötigen!</strong>
     Gehen Sie dazu auf die <a href="{modurl modname='EventManager' type='user' func='main'}" class="alert-link">Startseite</a>
     und klicken Sie unter der gewünschten Veranstaltung auf "Anmelden".
     <div class="clearfix"></div>
 </div>
-    <h4>Wozu gibt es dann Benutzerkonten?</h4>
-<p>
-    Als Schüler oder Eltern der KSL können Sie ein optionales Benutzerkonto anlegen, um dadurch eine bessere
-    Übersicht über die von Ihnen besuchten Veranstaltungen zu erhalten. Zudem entfällt mit einem Benutzerkonto die ständige
-    Bestätigung Ihrer E-Mail Addresse. Zum anlegen eines Benutzerkontos klicken Sie bitte oben auf
-    <a href="{modurl modname='Users' type='user' func='register'}" class="alert-link">Benutzer registrieren</a>.<br />
-    Ein Benutzerkonto ist lediglich dann notwendig, wenn Sie Lehrer o.ä. sind und Veranstaltungen erstellen möchten. Sollten
-    Sie als Lehrer noch kein Benutzerkonto haben, wenden Sie sich bitte über das
-    <a href="{modurl modname='Formicula' type='user' func='main'}" class="alert-link">Kontaktformular</a> an mich, damit
-    ich Ihnen die nötigen Rechte geben kann.
-</p>
-    <h4>Ich habe mein Passwort vergessen</h4>
-<p>
-    Sollten Sie das Passwort für Ihr Benutzerkonto vergessen haben, können Sie es über den obigen Link
-    (<a class="alert-link" href="{modurl modname='Users' type='user' func='lostPwdUname'}">Zugangsdaten oder Kennwort
-        wiederherstellen</a>) wiederherstellen. Falls weitere Probleme auftreten sollten, wenden Sie sich bitte über
-    <a href="{modurl modname='Formicula' type='user' func='main'}" class="alert-link">Kontaktformular</a> an mich.
-</p>
 {*
     END CHANGED CONTENT
 *}
@@ -125,3 +107,28 @@
 <script type="text/javascript" language="JavaScript">
 document.getElementById("users_login_login_id").focus();
 </script>
+
+{*
+    START CHANGED CONTENT
+*}
+<h4>Wozu gibt es dann Benutzerkonten?</h4>
+<p>
+    Als Schüler oder Eltern der KSL können Sie ein optionales Benutzerkonto anlegen, um dadurch eine bessere
+    Übersicht über die von Ihnen besuchten Veranstaltungen zu erhalten. Zudem entfällt mit einem Benutzerkonto die ständige
+    Bestätigung Ihrer E-Mail Addresse. Zum anlegen eines Benutzerkontos klicken Sie bitte oben auf
+    <a href="{modurl modname='Users' type='user' func='register'}" class="alert-link">Benutzer registrieren</a>.<br />
+    Ein Benutzerkonto ist lediglich dann notwendig, wenn Sie Lehrer o.ä. sind und Veranstaltungen erstellen möchten. Sollten
+    Sie als Lehrer noch kein Benutzerkonto haben, wenden Sie sich bitte über das
+    <a href="{modurl modname='Formicula' type='user' func='main'}" class="alert-link">Kontaktformular</a> an mich, damit
+    ich Ihnen die nötigen Rechte geben kann.
+</p>
+<h4>Ich habe mein Passwort vergessen</h4>
+<p>
+    Sollten Sie das Passwort für Ihr Benutzerkonto vergessen haben, können Sie es über den obigen Link
+    (<a class="alert-link" href="{modurl modname='Users' type='user' func='lostPwdUname'}">Zugangsdaten oder Kennwort
+        wiederherstellen</a>) wiederherstellen. Falls weitere Probleme auftreten sollten, wenden Sie sich bitte über
+    <a href="{modurl modname='Formicula' type='user' func='main'}" class="alert-link">Kontaktformular</a> an mich.
+</p>
+{*
+    END CHANGED CONTENT
+*}
