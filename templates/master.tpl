@@ -38,6 +38,7 @@
                     ajaxURL: '{{modurl modname='EventManager' type='ajax' func='bugReport' assign='url'}}{{$url}}',
                     html2canvasURL: '{{$scriptpath}}/ivoviz-feedback/html2canvas.min.js',
                     initButtonText: 'Fehler auf dieser Seite melden',
+                    feedbackButton: '.em-theme-report-bug',
                     highlightElement: false,
                     tpl: {
                         description: '<div id="feedback-welcome"><div class="feedback-logo">Fehler melden</div><p>Schreiben Sie eine kurze Problembeschreibung:</p><textarea id="feedback-note-tmp"></textarea><p>Next we\'ll let you identify areas of the page related to your description.</p><button id="feedback-welcome-next" class="feedback-next-btn feedback-btn-gray">Weiter</button><div id="feedback-welcome-error">Bitte geben Sie eine Beschreibung ein.</div><div class="feedback-wizard-close"></div></div>',

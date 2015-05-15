@@ -69,6 +69,11 @@
             </div>
         </div>
         <ul class="actions right">
+            <li class="hidden-xs">
+                <a href="javascript:void(0)" class="icon-link em-theme-report-bug" data-toggle="tooltip" data-placement="bottom" title="{gt text='Report an error'}">
+                    <i class="fa fa-bug"></i>
+                </a>
+            </li>
             {foreach from=$actions item='action'}
                 <li>
                     <a href="{$action.url}" class="icon-link" data-toggle="tooltip" data-placement="bottom" title="{$action.title}">
