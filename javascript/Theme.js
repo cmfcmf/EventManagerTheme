@@ -45,6 +45,11 @@
             $footer.find('.navcontainer').css({'padding-bottom': '10px'});
         }
 
+        function fixFormErrors() {
+            $('.z-form-error').each(function () {
+                $(this).closest('.form-group').addClass('has-error');
+            });
+        }
 
         /*
         var $navbar = $("#theme-navbar").find("> nav");
