@@ -8,6 +8,7 @@
     <title>{pagegetvar name='title'}</title>
     <meta name="description" content="{$metatags.description}"/>
     <meta name="keywords" content="{$metatags.keywords}"/>
+    <meta name="application-name" content="{$modvars.ZConfig.sitename}" />
     <link rel="icon" href="{$imagepath}/favicon.ico" type="image/x-icon">
 
     {include file='apple-settings.tpl'}
