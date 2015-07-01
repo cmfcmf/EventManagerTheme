@@ -20,39 +20,15 @@
         {assign var='tabs' value=$header.tabs}
     {/if}
     {if isset($header.color)}
-        {php}
-            function lightBackground($color) {
-                $r = $color[0];
-                $g = $color[1];
-                $b = $color[2];
-
-                $contrast = sqrt(
-                $r * $r * .241 +
-                $g * $g * .691 +
-                $b * $b * .068
-                );
-
-                return $contrast > 130;
-            };
-
-            $percent = 10;
-            $header = $this->get_template_vars('header');
-            $color = $header['color'];
-            $light = lightBackground($color);
-            foreach ($color as $k => $val) {
-                $color[$k] = $light ? round($val * (100-($percent*2))/100) : round($val * (100+($percent*2))/100);
-            }
-            $this->assign('contrastColor', $color);
-            $this->assign('textColor', $light ? 'black' : 'white');
-        {/php}
+        {getTextAndContrastColor color=$header.color}
         <style>
             .appbar.inverse, .appbar-tabs.inverse, .appbar.inverse a:not([role="menuitem"]), .appbar.inverse .fa, .appbar-tabs.inverse a:not([role="menuitem"]) {
                 background: rgb({{$header.color.0}}, {{$header.color.1}}, {{$header.color.2}});
-                color: {{$textColor}}
+                color: rgb({{$textColor.0}}, {{$textColor.1}}, {{$textColor.2}});
             }
             .appbar.inverse .icon-link:hover, .appbar-tabs.inverse .icon-link:hover, .appbar.inverse .fa:hover {
                 background: rgb({{$contrastColor.0}}, {{$contrastColor.1}}, {{$contrastColor.2}});
-                color: {{$textColor}}
+                color: rgb({{$textColor.0}}, {{$textColor.1}}, {{$textColor.2}});
             }
         </style>
     {/if}
