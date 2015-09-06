@@ -5,9 +5,9 @@ function smarty_function_getTextAndContrastColor($params, Zikula_View $view)
     $color = $params['color'];
 
     function lightBackground($color) {
-        $r = $color[0];
-        $g = $color[1];
-        $b = $color[2];
+        $r = $color['r'];
+        $g = $color['g'];
+        $b = $color['b'];
 
         $contrast = sqrt(
             $r * $r * .241 +

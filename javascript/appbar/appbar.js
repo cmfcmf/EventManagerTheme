@@ -48,5 +48,10 @@
             var $newMainAction = $target.find('.js-main-action');
             $newMainAction.animateRotate(180, 0, duration, 'linear');
         });
+
+        var availableWidth = $('.appbar-container').width() - 50 - $('.appbar-container .actions.right').width();
+        if ($('.appbar-container .title').width() > availableWidth) {
+            $('.appbar-container .title a').wrap('<marquee>'); // attr('class', 'marquee')
+        }
     });
 })(jQuery);
